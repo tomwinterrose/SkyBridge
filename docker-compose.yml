@@ -8,11 +8,11 @@ services:
       - skybridge:/app/database
     environment:
       # Base URL of where SkyBridge will be hosted without the protocol.
-      - SKYBRIDGE_BASEURL=your.domain.com
+      - SKYBRIDGE_BASEURL=bsky.gengar.cloud
       # Random secret, generate with `openssl rand -base64 32`.
-      - SKYBRIDGE_SECRET
+      - SKYBRIDGE_SECRET=dTumGgacpCfsU0XfMkeFOW4f+r8JHQEDk0aJnBi/dmU=
       # Password used to make a SkyBridge instance private.
-      - SKYBRIDGE_AUTH_PASSWORD
+      - SKYBRIDGE_AUTH_PASSWORD=HZ7CU0i1NW2QV2SqGR21RtdM
       # Should a bridge password be required to authenticate?
       - SKYBRIDGE_REQUIRE_AUTH_PASSWORD=true
       # Should a nice index page be shown on the root URL?
@@ -22,3 +22,4 @@ services:
 
 volumes:
   skybridge:
+
