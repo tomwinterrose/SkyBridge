@@ -4,7 +4,7 @@
 #
 
 app = "skybridge"
-primary_region = "lhr"
+primary_region = "ord"
 
 [http_service]
   internal_port = 8080
