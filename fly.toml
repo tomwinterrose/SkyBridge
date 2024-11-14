@@ -3,8 +3,11 @@
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "skybridge"
+app = "bsky-gengar"
 primary_region = "ord"
+
+[build]
+image = "videah/skybridge:latest"
 
 [http_service]
   internal_port = 8080
@@ -14,9 +17,13 @@ primary_region = "ord"
   min_machines_running = 0
 
 [env]
-  SKYBRIDGE_BASEURL = "skybridge.fly.dev"
+  SKYBRIDGE_BASEURL = "bsky-gengar.fly.dev"
   SKYBRIDGE_SHOW_INDEX = true
   FLY_SWAP = true
+  SKYBRIDGE_SECRET = 'dTumGgacpCfsU0XfMkeFOW4f+r8JHQEDk0aJnBi/dmU='
+  SKYBRIDGE_REQUIRE_AUTH_PASSWORD = true
+  SKYBRIDGE_AUTH_PASSWORD = 'HZ7CU0i1NW2QV2SqGR21RtdM'
+  SKYBRIDGE_ALLOW_BACKFILL = true
 
 [mounts]
   source="skybridge_data"
@@ -33,3 +40,9 @@ primary_region = "ord"
   type = "requests"
   hard_limit = 999999
   soft_limit = 9999
+
+[[vm]]
+  memory = '256mb'
+  cpu_kind = 'shared'
+  cpus = 1
+  
